@@ -3,6 +3,7 @@
 import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
+import indexRouter from '../routes';
 
 export class Server {
 
@@ -23,7 +24,7 @@ export class Server {
     }
 
     routes(): void {
-        // this.app.use('/api/employees', employeeRoutes);
+        this.app.use('/', indexRouter);
     }
 
     start(): void {
