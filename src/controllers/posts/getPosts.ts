@@ -1,12 +1,12 @@
 import { IControllerResponse } from "../../models/interfaces/IControllerResponse";
+import { IGetPostsUsecase } from "../../usecases/getPosts";
 
-export const getPosts = async (): Promise<IControllerResponse> => {
-    const posts = [{ id: 1, title: 'Post 1' }, { id: 2, title: 'Post 2'}];
-    return {
-        body: posts,
-        status: 200,
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    };
+export const buildGetPosts = (getPostsUsecase: IGetPostsUsecase) => {
+    return async (): Promise<IControllerResponse> => {
+        const posts = await getPostsUsecase();
+        return {
+            body: posts, 
+            status: 200
+        };
+    }
 }

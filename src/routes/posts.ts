@@ -1,9 +1,10 @@
 import { Router } from 'express';
-import { getPosts } from '../controllers/posts';
+import { postController } from '../controllers/posts';
 import { buildExpressCallback } from '../utils/buildExpressCallback';
 
 const router = Router();
 
-router.get('/',  buildExpressCallback(getPosts));
+router.get('/',  buildExpressCallback(postController.getPosts));
+router.get('/:id', buildExpressCallback(postController.getPostById));
 
 export default router;
