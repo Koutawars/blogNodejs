@@ -9,6 +9,7 @@ export const handleError = (error: any) => {
             status: error.status
         }
     } else if (error instanceof Error) {
+        console.log(error);
         return {
             body: {
                 error: "Internal Server Error"

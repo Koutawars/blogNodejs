@@ -1,7 +1,7 @@
 import { Controller } from "../models/types/Controller";
 // import request from express and response
 import { Request, Response } from "express";
-import { IHttpRequest } from "../models/interfaces/IHttpRequest";
+import { IHttpRequest } from "../models/interfaces/utils/IHttpRequest";
 
 export const buildExpressCallback = (controller: Controller) => {
     return async (req: Request, res: Response) => {

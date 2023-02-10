@@ -2,18 +2,18 @@ import { ErrorHttp } from "../models/Class/ErrorHttp";
 import { IPost } from "../models/interfaces/post/IPost";
 import { IPostRepository } from "../models/interfaces/post/IPostRepository";
 
-export type IGetPostByIdUsecase = (id: number) => Promise<IPost>;
+export type IDeletePostByIdUsecase = (id: number) => Promise<IPost>;
 
-export const buildGetPostById = ({
+export const buildDeletePostById = ({
     postRepository
 }: {
     postRepository: IPostRepository
-}): IGetPostByIdUsecase => {
+}): IDeletePostByIdUsecase => {
     return async (id: number) => {
         const post = await postRepository.findOne(id);
         if(post === null) {
             throw new ErrorHttp(404, "Post not found");
         }
-        return post;
+        return await postRepository.delete(id);
     }
 }
