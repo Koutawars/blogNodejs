@@ -8,7 +8,7 @@ export const buildDeletePost = (deletePostUsecase: IDeletePostByIdUsecase):Contr
     return async (request: Partial<IHttpRequest>): Promise<IControllerResponse> => {
         const { id } = request.params;
         try {
-            const posts = await deletePostUsecase(id);
+            const posts = await deletePostUsecase(Number(id));
             return {
                 body: posts, 
                 status: 200

@@ -10,7 +10,7 @@ export const buildUpdatePost = (updatePostsUsecase: IUpdatePostByIdUsecase):Cont
         const { id } = request.params;
         const data: IPost = request.body;
         try {
-            const posts = await updatePostsUsecase(data, id);
+            const posts = await updatePostsUsecase(data, Number(id));
             return {
                 body: posts, 
                 status: 200
