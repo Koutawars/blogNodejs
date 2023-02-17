@@ -1,7 +1,7 @@
 import { IControllerResponse } from "../../models/interfaces/utils/IControllerResponse";
 import { IHttpRequest } from "../../models/interfaces/utils/IHttpRequest";
 import { Controller } from "../../models/types/Controller";
-import { IDeletePostByIdUsecase } from "../../usecases/deletePostById";
+import { IDeletePostByIdUsecase } from "../../usecases/post/deletePostById";
 import { handleError } from "../../utils/handleError";
 
 export const buildDeletePost = (deletePostUsecase: IDeletePostByIdUsecase):Controller => {

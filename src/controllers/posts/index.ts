@@ -1,5 +1,5 @@
 import { buildGetPosts } from "./getPosts";
-import { postUseCase } from "../../usecases";
+import { postUseCase } from "../../usecases/post";
 import { buildGetPostById } from "./getPostById";
 import { buildCreatePosts } from "./createPost";
 import { buildUpdatePost } from "./updatePost";

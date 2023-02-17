@@ -1,17 +1,17 @@
-import { CreatePostDto } from "../../models/Class/dto/Post/CreatePost";
+import { RegisterDto } from "../../models/Class/dto/user/Register";
 import { IControllerResponse } from "../../models/interfaces/utils/IControllerResponse";
 import { IHttpRequest } from "../../models/interfaces/utils/IHttpRequest";
 import { Controller } from "../../models/types/Controller";
-import { ICreatePostUsecase } from "../../usecases/post/createPost";
+import { IRegisterUsecase } from "../../usecases/user/register";
 import { handleError } from "../../utils/handleError";
 
-export const buildCreatePosts = (createPostsUsecase: ICreatePostUsecase):Controller => {
+export const buildRegister = (registerUsecase: IRegisterUsecase):Controller => {
     return async (request: Partial<IHttpRequest>): Promise<IControllerResponse> => {
-        const data: CreatePostDto = new CreatePostDto(request.body);
+        const data: RegisterDto = new RegisterDto(request.body);
         try {
-            const posts = await createPostsUsecase(data);
+            const register = await registerUsecase(data);
             return {
-                body: posts, 
+                body: register, 
                 status: 201
             };
         } catch (error) {

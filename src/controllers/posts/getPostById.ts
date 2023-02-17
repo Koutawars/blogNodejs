@@ -1,6 +1,6 @@
 import { IControllerResponse } from "../../models/interfaces/utils/IControllerResponse";
 import { IHttpRequest } from "../../models/interfaces/utils/IHttpRequest";
-import { IGetPostByIdUsecase } from "../../usecases/getPostById";
+import { IGetPostByIdUsecase } from "../../usecases/post/getPostById";
 import { handleError } from "../../utils/handleError";
 
 export const buildGetPostById = (getPostById: IGetPostByIdUsecase) => {

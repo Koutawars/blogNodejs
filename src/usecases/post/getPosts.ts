@@ -1,5 +1,5 @@
-import { IPost } from "../models/interfaces/post/IPost";
-import { IPostRepository } from "../models/interfaces/post/IPostRepository";
+import { IPost } from "../../models/interfaces/post/IPost";
+import { IPostRepository } from "../../models/interfaces/post/IPostRepository";
 
 export type IGetPostsUsecase = () => Promise<IPost[]>;
 

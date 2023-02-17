@@ -1,5 +1,5 @@
 import { IControllerResponse } from "../../models/interfaces/utils/IControllerResponse";
-import { IGetPostsUsecase } from "../../usecases/getPosts";
+import { IGetPostsUsecase } from "../../usecases/post/getPosts";
 import { handleError } from "../../utils/handleError";
 
 export const buildGetPosts = (getPostsUsecase: IGetPostsUsecase) => {

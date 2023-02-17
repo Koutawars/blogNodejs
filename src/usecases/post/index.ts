@@ -1,5 +1,5 @@
 import { buildGetPosts } from "./getPosts";
-import { postRepository } from "../repositories";
+import { postRepository } from "../../repositories";
 import { buildGetPostById } from "./getPostById";
 import { buildCreatePost } from "./createPost";
 import { buildUpdatePostById } from "./updatePostById";

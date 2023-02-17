@@ -1,6 +1,6 @@
-import { ErrorHttp } from "../models/Class/ErrorHttp";
-import { IPost } from "../models/interfaces/post/IPost";
-import { IPostRepository } from "../models/interfaces/post/IPostRepository";
+import { ErrorHttp } from "../../models/Class/ErrorHttp";
+import { IPost } from "../../models/interfaces/post/IPost";
+import { IPostRepository } from "../../models/interfaces/post/IPostRepository";
 
 export type IUpdatePostByIdUsecase = (data:IPost, id: number) => Promise<IPost>;
 

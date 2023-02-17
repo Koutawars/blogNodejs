@@ -1,6 +1,6 @@
-import { CreatePostDto } from "../models/Class/dto/Post/CreatePost";
-import { IPost } from "../models/interfaces/post/IPost";
-import { IPostRepository } from "../models/interfaces/post/IPostRepository";
+import { CreatePostDto } from "../../models/Class/dto/Post/CreatePost";
+import { IPost } from "../../models/interfaces/post/IPost";
+import { IPostRepository } from "../../models/interfaces/post/IPostRepository";
 
 export type ICreatePostUsecase = (data: CreatePostDto) => Promise<IPost>;
 
