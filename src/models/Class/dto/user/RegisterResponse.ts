@@ -2,8 +2,8 @@ export class RegisterResponse {
     menssage: string;
     id: number;
 
-    constructor({ menssage, id }: any) {
-        this.menssage = menssage;
+    constructor({ message, id }: {message: string, id: number}) {
+        this.menssage = message;
         this.id = id;
     }
 }

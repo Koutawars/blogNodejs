@@ -14,4 +14,12 @@ export class UserPrisma implements IUserRepository {
             where: { email }
         });
     }
+
+    findByEmailOrUsename(email: string, username: string): Promise<IUser> {
+        return this.prisma.user.findFirst({
+            where: {
+                OR: [ { email }, { username } ]
+            }
+        });
+    }
 }
