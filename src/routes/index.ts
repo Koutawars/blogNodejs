@@ -1,12 +1,14 @@
 import { Router } from 'express';
+import { verifyToken } from './middleware/verifyToken';
 
-import posts from './posts';
-import user from './user';
+import privateRouter from './private';
+import publicRouter from './public';
 
 const router = Router();
 
-router.use('/post', posts);
-router.use('/', user);
+router.use('/', publicRouter);
+router.use(verifyToken);
+router.use('/', privateRouter);
 
 router.use('*', (req, res) => {
     res.status(404).json({ message: 'Not found' });

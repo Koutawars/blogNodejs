@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { postController } from '../controllers/posts';
-import { buildExpressCallback } from '../utils/buildExpressCallback';
+import { postController } from '../../controllers/posts';
+import { buildExpressCallback } from '../../utils/buildExpressCallback';
 
 const router = Router();
 
