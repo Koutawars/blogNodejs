@@ -8,7 +8,7 @@ export const handleError = (error: any) => {
             },
             status: error.status
         }
-    } else if (error instanceof Error) {
+    } else {
         console.log(error);
         return {
             body: {
