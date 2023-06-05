@@ -5,7 +5,7 @@ export function verifyToken(req: Request, res: Response, next: NextFunction) {
     const token = req.headers['authorization'];
 
     if (!token) {
-        return res.status(401).json({ mensaje: 'Token no proporcionado' });
+        return res.status(401).json({ mensaje: 'Token not provided' });
     }
 
     try {
@@ -13,6 +13,6 @@ export function verifyToken(req: Request, res: Response, next: NextFunction) {
         req['user'] = payload;
         next();
     } catch (error) {
-        return res.status(401).json({ mensaje: 'Token no válido' });
+        return res.status(401).json({ mensaje: 'Invalid token' });
     }
 }
