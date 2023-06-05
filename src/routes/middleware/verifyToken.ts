@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { tokenTool } from "../../utils/token";
 
+// TODO: Using a controller instead directly as middleware
 export function verifyToken(req: Request, res: Response, next: NextFunction) {
     const token = req.headers['authorization'];
 
